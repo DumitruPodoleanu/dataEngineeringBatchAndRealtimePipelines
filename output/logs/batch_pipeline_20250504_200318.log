@@ -1,0 +1,42 @@
+2025-05-04 20:03:18,174 - batch_pipeline - INFO - Starting: Batch Processing Mode
+2025-05-04 20:03:18,175 - batch_pipeline - INFO - Found 1 batch files to process
+2025-05-04 20:03:18,175 - batch_pipeline - INFO - [94mProcessing batch file: input/batch\Nashville_housing_data_2013_2016.csv[0m
+2025-05-04 20:03:18,175 - batch_pipeline - INFO - Starting: Reading Batch File
+2025-05-04 20:03:18,175 - batch_pipeline - INFO - Reading file: input/batch\Nashville_housing_data_2013_2016.csv
+2025-05-04 20:03:18,400 - batch_pipeline - INFO - [92mSuccessfully read file with shape: (56636, 31)[0m
+2025-05-04 20:03:18,400 - batch_pipeline - INFO - Completed: Reading Batch File (Duration: 0:00:00.225594)
+2025-05-04 20:03:18,400 - batch_pipeline - INFO - [92mSuccessfully Read file: input/batch\Nashville_housing_data_2013_2016.csv[0m
+2025-05-04 20:03:18,400 - batch_pipeline - INFO - Initial Batch Data shape: (56636, 31)
+2025-05-04 20:03:18,400 - batch_pipeline - INFO - Initial Batch Data columns: ['Unnamed: 0.1', 'Unnamed: 0', 'Parcel ID', 'Land Use', 'Property Address', 'Suite/ Condo   #', 'Property City', 'Sale Date', 'Sale Price', 'Legal Reference', 'Sold As Vacant', 'Multiple Parcels Involved in Sale', 'Owner Name', 'Address', 'City', 'State', 'Acreage', 'Tax District', 'Neighborhood', 'image', 'Land Value', 'Building Value', 'Total Value', 'Finished Area', 'Foundation Type', 'Year Built', 'Exterior Wall', 'Grade', 'Bedrooms', 'Full Bath', 'Half Bath']
+2025-05-04 20:03:18,479 - batch_pipeline - DEBUG - Initial Batch Data info:
+None
+2025-05-04 20:03:18,498 - batch_pipeline - DEBUG - Initial Batch Data head:
+   Unnamed: 0.1  Unnamed: 0         Parcel ID  ... Bedrooms Full Bath Half Bath
+0             0           0  105 03 0D 008.00  ...      NaN       NaN       NaN
+1             1           1   105 11 0 080.00  ...      2.0       1.0       0.0
+2             2           2   118 03 0 130.00  ...      3.0       2.0       1.0
+3             3           3   119 01 0 479.00  ...      4.0       2.0       0.0
+4             4           4   119 05 0 186.00  ...      2.0       1.0       0.0
+
+[5 rows x 31 columns]
+2025-05-04 20:03:18,498 - batch_pipeline - INFO - Starting: Batch Validation
+2025-05-04 20:03:18,498 - batch_pipeline - INFO - Starting validation for Nashville Housing dataset
+2025-05-04 20:03:18,506 - batch_pipeline - ERROR - Column validation failed: {'missing_mandatory': ['saleprice', 'buildingvalue', 'landuse', 'landvalue', 'fullbath', 'yearbuilt', 'halfbath', 'finishedarea', 'legalreference', 'parcelid', 'uniqueid', 'totalvalue', 'saledate'], 'missing_optional': ['suite_condo'], 'unexpected': ['suite__condo___#', 'neighborhood', 'unnamed:_0.1']}
+2025-05-04 20:03:19,085 - batch_pipeline - WARNING - [93mFound 30619 missing values in mandatory column 'acreage'. These rows will be removed during processing.[0m
+2025-05-04 20:03:19,728 - batch_pipeline - WARNING - [93mFound 32477 missing values in mandatory column 'bedrooms'. These rows will be removed during processing.[0m
+2025-05-04 20:03:19,773 - batch_pipeline - ERROR - [91mNashville Housing dataset failed validation[0m
+2025-05-04 20:03:19,774 - batch_pipeline - ERROR - [93mFound 0 errors affecting 0 rows[0m
+2025-05-04 20:03:19,778 - batch_pipeline - INFO - Completed: Batch Validation (Duration: 0:00:01.280059)
+2025-05-04 20:03:19,778 - batch_pipeline - ERROR - [91mBatch Validation - FAILED[0m
+2025-05-04 20:03:19,778 - batch_pipeline - DEBUG - Batch Validation results: {'column_validation': {'missing_mandatory': ['saleprice', 'buildingvalue', 'landuse', 'landvalue', 'fullbath', 'yearbuilt', 'halfbath', 'finishedarea', 'legalreference', 'parcelid', 'uniqueid', 'totalvalue', 'saledate'], 'missing_optional': ['suite_condo'], 'unexpected': ['suite__condo___#', 'neighborhood', 'unnamed:_0.1']}, 'integrity_errors': [], 'validation_summary': {'total_errors': 0, 'error_types': {}, 'affected_rows': set(), 'error_details': []}, 'is_valid': False}
+2025-05-04 20:03:19,778 - batch_pipeline - ERROR - [91m================================================================================[0m
+2025-05-04 20:03:19,778 - batch_pipeline - ERROR - [91mSTOPPING PIPELINE - Validation failed for file: input/batch\Nashville_housing_data_2013_2016.csv[0m
+2025-05-04 20:03:19,778 - batch_pipeline - ERROR - [91m================================================================================[0m
+2025-05-04 20:03:19,780 - batch_pipeline - INFO - [92mValidation report saved to: output/logs\validation_report_Nashville_housing_data_2013_2016.csv.txt[0m
+2025-05-04 20:03:19,786 - batch_pipeline - INFO - [94m================================================================================[0m
+2025-05-04 20:03:19,786 - batch_pipeline - INFO - [94mBATCH PROCESSING SUMMARY[0m
+2025-05-04 20:03:19,786 - batch_pipeline - INFO - [94m================================================================================[0m
+2025-05-04 20:03:19,786 - batch_pipeline - INFO - [92mSuccessfully processed: 0 files[0m
+2025-05-04 20:03:19,786 - batch_pipeline - INFO - [91mFailed to process: 1 files[0m
+2025-05-04 20:03:19,786 - batch_pipeline - INFO - [94m================================================================================[0m
+2025-05-04 20:03:19,786 - batch_pipeline - INFO - Completed: Batch Processing Mode (Duration: 0:00:01.610828)

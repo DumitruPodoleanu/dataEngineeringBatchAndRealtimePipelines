@@ -1,0 +1,73 @@
+2025-05-04 20:11:59,486 - realtime_pipeline - INFO - Starting: Realtime Monitoring Mode
+2025-05-04 20:11:59,486 - realtime_pipeline - INFO - Watching for new files...
+2025-05-04 20:12:04,491 - realtime_pipeline - INFO - Processing realtime file: input/realtime/F1DriversDirty1.csv
+2025-05-04 20:12:04,491 - realtime_pipeline - INFO - Starting: Reading Realtime File
+2025-05-04 20:12:04,491 - realtime_pipeline - INFO - Reading file: input/realtime/F1DriversDirty1.csv
+2025-05-04 20:12:04,497 - realtime_pipeline - INFO - Successfully read file with shape: (870, 16)
+2025-05-04 20:12:04,497 - realtime_pipeline - INFO - Completed: Reading Realtime File (Duration: 0:00:00.005975)
+2025-05-04 20:12:04,498 - realtime_pipeline - INFO - Successfully Read file: input/realtime/F1DriversDirty1.csv
+2025-05-04 20:12:04,498 - realtime_pipeline - INFO - Initial Realtime Data shape: (870, 16)
+2025-05-04 20:12:04,498 - realtime_pipeline - INFO - Initial Realtime Data columns: ['Unnamed: 0', 'Driver', 'Nationality', 'Seasons', 'Championships', 'Race_Entries', 'Race_Starts', 'Pole_Positions', 'Race_Wins', 'Podiums', 'Fastest_Laps', 'Points', 'Active', 'Decade', 'Years_Active', 'Champion']
+2025-05-04 20:12:04,503 - realtime_pipeline - DEBUG - Initial Realtime Data info:
+None
+2025-05-04 20:12:04,519 - realtime_pipeline - DEBUG - Initial Realtime Data head:
+   Unnamed: 0             Driver     Nationality                         Seasons  Championships  Race_Entries  Race_Starts  ...  Podiums  Fastest_Laps  Points  Active  Decade  Years_Active  Champion
+0           0        Carlo Abate           Italy                    [1962, 1963]            0.0           3.0          0.0  ...      0.0           0.0     0.0   False    1960             2     False
+1           1   George Abecassis  United Kingdom                    [1951, 1952]            0.0           2.0          2.0  ...      0.0           0.0     NaN   False    1950             2     False
+2           2      Kenny Acheson  United Kingdom                    [1983, 1985]            0.0          10.0          3.0  ...      0.0           0.0     0.0   False    1980             2     False
+3           3  Andrea de Adamich           Italy  [1968, 1970, 1971, 1972, 1973]            0.0          36.0         30.0  ...      0.0           0.0     6.0   False    1970             5     False
+4           4     Philippe Adams         Belgium                          [1994]            0.0           2.0          2.0  ...      0.0           0.0     0.0   False    1990             1     False
+
+[5 rows x 16 columns]
+2025-05-04 20:12:04,520 - realtime_pipeline - INFO - Starting: Realtime Validation
+2025-05-04 20:12:04,520 - realtime_pipeline - INFO - Starting validation...
+2025-05-04 20:12:04,521 - realtime_pipeline - WARNING - Found 2 duplicate rows.
+2025-05-04 20:12:04,521 - realtime_pipeline - WARNING - Column 'Nationality' has 1 missing values.
+2025-05-04 20:12:04,521 - realtime_pipeline - WARNING - Column 'Race_Wins' has 1 missing values.
+2025-05-04 20:12:04,521 - realtime_pipeline - WARNING - Column 'Points' has 1 missing values.
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Column 'Nationality' contains properly formatted or allowed values.
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Validation complete.
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Completed: Realtime Validation (Duration: 0:00:00.004010)
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Found 2 duplicate rows.
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Column 'Nationality' has 1 missing values.
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Column 'Race_Wins' has 1 missing values.
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Column 'Points' has 1 missing values.
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Starting: Realtime Processing
+2025-05-04 20:12:04,524 - realtime_pipeline - INFO - Starting processing...
+2025-05-04 20:12:04,525 - realtime_pipeline - INFO - Removed 2 duplicate rows.
+2025-05-04 20:12:04,525 - realtime_pipeline - INFO - Removed 3 rows with missing values.
+2025-05-04 20:12:04,526 - realtime_pipeline - INFO - Normalized Decade values to nearest lower multiple of 10.
+2025-05-04 20:12:04,526 - realtime_pipeline - INFO - Dropped column: Championships
+2025-05-04 20:12:04,526 - realtime_pipeline - INFO - Dropped column: Champion
+2025-05-04 20:12:04,527 - realtime_pipeline - INFO - Calculated Points_per_Race
+2025-05-04 20:12:04,528 - realtime_pipeline - INFO - Normalized Points_per_Race by Decade
+2025-05-04 20:12:04,528 - realtime_pipeline - INFO - Calculated Career_Length_Factor using log10
+2025-05-04 20:12:04,528 - realtime_pipeline - INFO - Created Performance_Index
+2025-05-04 20:12:04,529 - realtime_pipeline - INFO - Added Adjusted Win and Podium Indices
+2025-05-04 20:12:04,529 - realtime_pipeline - INFO - Processing complete.
+2025-05-04 20:12:04,530 - realtime_pipeline - INFO - Completed: Realtime Processing (Duration: 0:00:00.005695)
+2025-05-04 20:12:04,530 - realtime_pipeline - INFO - Processed Realtime Data shape: (865, 23)
+2025-05-04 20:12:04,530 - realtime_pipeline - INFO - Processed Realtime Data columns: ['Unnamed: 0', 'Driver', 'Nationality', 'Seasons', 'Race_Entries', 'Race_Starts', 'Pole_Positions', 'Race_Wins', 'Podiums', 'Fastest_Laps', 'Points', 'Active', 'Decade', 'Years_Active', 'Points_per_Race', 'Decade_Avg_PPR', 'Normalized_PPR', 'Career_Length_Factor', 'Performance_Index', 'Win_Rate', 'Podium_Rate', 'Adjusted_Win_Index', 'Adjusted_Podium_Index']
+2025-05-04 20:12:04,532 - realtime_pipeline - DEBUG - Processed Realtime Data info:
+None
+2025-05-04 20:12:04,541 - realtime_pipeline - DEBUG - Processed Realtime Data head:
+   Unnamed: 0           Driver     Nationality                                           Seasons  ...  Win_Rate  Podium_Rate  Adjusted_Win_Index  Adjusted_Podium_Index
+0           0      Carlo Abate           Italy                                      [1962, 1963]  ...       0.0          0.0                 0.0                    0.0
+2           2    Kenny Acheson  United Kingdom                                      [1983, 1985]  ...       0.0          0.0                 0.0                    0.0
+4           4   Philippe Adams         Belgium                                            [1994]  ...       0.0          0.0                 0.0                    0.0
+6           6      Kurt Adolff    West Germany                                            [1953]  ...       0.0          0.0                 0.0                    0.0
+7           7  Fred Agabashian   United States  [1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957]  ...       0.0          0.0                 0.0                    0.0
+
+[5 rows x 23 columns]
+2025-05-04 20:12:04,542 - realtime_pipeline - INFO - Starting: Backup Validation
+2025-05-04 20:12:04,542 - realtime_pipeline - INFO - Starting backup validation for processed columns...
+2025-05-04 20:12:04,542 - realtime_pipeline - INFO - Post-Processing Validation Complete.
+2025-05-04 20:12:04,543 - realtime_pipeline - INFO - Completed: Backup Validation (Duration: 0:00:00.000915)
+2025-05-04 20:12:04,543 - realtime_pipeline - INFO - Post-Processing Validation Complete.
+2025-05-04 20:12:04,543 - realtime_pipeline - INFO - Starting: Writing Realtime Output
+2025-05-04 20:12:04,543 - realtime_pipeline - INFO - Attempting to write file: output/realtime/F1DriversDirty1.csv
+2025-05-04 20:12:04,550 - realtime_pipeline - INFO - Successfully wrote file with shape (865, 23) to: output/realtime/F1DriversDirty1.csv
+2025-05-04 20:12:04,550 - realtime_pipeline - INFO - Completed: Writing Realtime Output (Duration: 0:00:00.007768)
+2025-05-04 20:12:04,550 - realtime_pipeline - INFO - Successfully Write file: output/realtime/F1DriversDirty1.csv
+2025-05-04 20:12:10,080 - realtime_pipeline - INFO - Stopping realtime monitoring
+2025-05-04 20:12:10,081 - realtime_pipeline - INFO - Completed: Realtime Monitoring Mode (Duration: 0:00:10.595315)

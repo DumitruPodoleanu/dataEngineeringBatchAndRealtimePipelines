@@ -1,0 +1,84 @@
+2025-05-04 21:32:16,656 - realtime_pipeline - INFO - Starting: Realtime Monitoring Mode
+2025-05-04 21:32:16,656 - realtime_pipeline - INFO - Watching for new files...
+2025-05-04 21:32:26,658 - realtime_pipeline - INFO - [94mProcessing realtime file: input/realtime\F1DriversCleanNew.csv[0m
+2025-05-04 21:32:26,658 - realtime_pipeline - INFO - Starting: Reading Realtime File
+2025-05-04 21:32:26,658 - realtime_pipeline - INFO - Reading file: input/realtime\F1DriversCleanNew.csv
+2025-05-04 21:32:26,663 - realtime_pipeline - INFO - [92mSuccessfully read file with shape: (868, 16)[0m
+2025-05-04 21:32:26,663 - realtime_pipeline - INFO - Completed: Reading Realtime File (Duration: 0:00:00.005004)
+2025-05-04 21:32:26,663 - realtime_pipeline - INFO - [92mSuccessfully Read file: input/realtime\F1DriversCleanNew.csv[0m
+2025-05-04 21:32:26,663 - realtime_pipeline - INFO - Initial Realtime Data shape: (868, 16)
+2025-05-04 21:32:26,663 - realtime_pipeline - INFO - Initial Realtime Data columns: ['Unnamed: 0', 'Driver', 'Nationality', 'Seasons', 'Championships', 'Race_Entries', 'Race_Starts', 'Pole_Positions', 'Race_Wins', 'Podiums', 'Fastest_Laps', 'Points', 'Active', 'Decade', 'Years_Active', 'Champion']
+2025-05-04 21:32:26,669 - realtime_pipeline - DEBUG - Initial Realtime Data info:
+None
+2025-05-04 21:32:26,680 - realtime_pipeline - DEBUG - Initial Realtime Data head:
+   Unnamed: 0             Driver  ... Years_Active Champion
+0           0        Carlo Abate  ...            2    False
+1           1   George Abecassis  ...            2    False
+2           2      Kenny Acheson  ...            2    False
+3           3  Andrea de Adamich  ...            5    False
+4           4     Philippe Adams  ...            1    False
+
+[5 rows x 16 columns]
+2025-05-04 21:32:26,681 - realtime_pipeline - INFO - Starting: Realtime Validation
+2025-05-04 21:32:26,681 - realtime_pipeline - INFO - Starting validation...
+2025-05-04 21:32:26,684 - realtime_pipeline - INFO - [92mNo duplicate rows found.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Unnamed: 0' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Driver' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Nationality' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Seasons' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Championships' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Race_Entries' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Race_Starts' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Pole_Positions' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Race_Wins' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Podiums' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Fastest_Laps' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Points' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Active' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Decade' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Years_Active' has no missing values.[0m
+2025-05-04 21:32:26,686 - realtime_pipeline - INFO - [92mColumn 'Champion' has no missing values.[0m
+2025-05-04 21:32:26,689 - realtime_pipeline - INFO - [92mColumn 'Podiums' has only numeric values.[0m
+2025-05-04 21:32:26,689 - realtime_pipeline - INFO - [92mColumn 'Podiums' has no negative values.[0m
+2025-05-04 21:32:26,689 - realtime_pipeline - INFO - [92mColumn 'Active' contains only True/False values.[0m
+2025-05-04 21:32:26,691 - realtime_pipeline - INFO - [92mColumn 'Driver' has no empty strings.[0m
+2025-05-04 21:32:26,692 - realtime_pipeline - INFO - [92mColumn 'Nationality' has no empty strings.[0m
+2025-05-04 21:32:26,692 - realtime_pipeline - INFO - [92mColumn 'Seasons' has no empty strings.[0m
+2025-05-04 21:32:26,692 - realtime_pipeline - INFO - [92mValidation complete.[0m
+2025-05-04 21:32:26,692 - realtime_pipeline - INFO - Completed: Realtime Validation (Duration: 0:00:00.010895)
+2025-05-04 21:32:26,692 - realtime_pipeline - INFO - Starting: Realtime Processing
+2025-05-04 21:32:26,692 - realtime_pipeline - INFO - Starting processing...
+2025-05-04 21:32:26,693 - realtime_pipeline - INFO - [92mDropped column: Championships[0m
+2025-05-04 21:32:26,693 - realtime_pipeline - INFO - [92mDropped column: Champion[0m
+2025-05-04 21:32:26,694 - realtime_pipeline - INFO - [92mCalculated Points_per_Race[0m
+2025-05-04 21:32:26,696 - realtime_pipeline - INFO - [92mNormalized Points_per_Race by Decade[0m
+2025-05-04 21:32:26,696 - realtime_pipeline - INFO - [92mCalculated Career_Length_Factor using log10[0m
+2025-05-04 21:32:26,697 - realtime_pipeline - INFO - [92mCreated Performance_Index[0m
+2025-05-04 21:32:26,699 - realtime_pipeline - INFO - [92mAdded Adjusted Win and Podium Indices[0m
+2025-05-04 21:32:26,699 - realtime_pipeline - INFO - [92mProcessing complete.[0m
+2025-05-04 21:32:26,699 - realtime_pipeline - INFO - Completed: Realtime Processing (Duration: 0:00:00.007018)
+2025-05-04 21:32:26,699 - realtime_pipeline - INFO - Processed Realtime Data shape: (868, 23)
+2025-05-04 21:32:26,699 - realtime_pipeline - INFO - Processed Realtime Data columns: ['Unnamed: 0', 'Driver', 'Nationality', 'Seasons', 'Race_Entries', 'Race_Starts', 'Pole_Positions', 'Race_Wins', 'Podiums', 'Fastest_Laps', 'Points', 'Active', 'Decade', 'Years_Active', 'Points_per_Race', 'Decade_Avg_PPR', 'Normalized_PPR', 'Career_Length_Factor', 'Performance_Index', 'Win_Rate', 'Podium_Rate', 'Adjusted_Win_Index', 'Adjusted_Podium_Index']
+2025-05-04 21:32:26,706 - realtime_pipeline - DEBUG - Processed Realtime Data info:
+None
+2025-05-04 21:32:26,720 - realtime_pipeline - DEBUG - Processed Realtime Data head:
+   Unnamed: 0             Driver  ... Adjusted_Win_Index Adjusted_Podium_Index
+0           0        Carlo Abate  ...                0.0                   0.0
+1           1   George Abecassis  ...                0.0                   0.0
+2           2      Kenny Acheson  ...                0.0                   0.0
+3           3  Andrea de Adamich  ...                0.0                   0.0
+4           4     Philippe Adams  ...                0.0                   0.0
+
+[5 rows x 23 columns]
+2025-05-04 21:32:26,721 - realtime_pipeline - INFO - Starting: Backup Validation
+2025-05-04 21:32:26,721 - realtime_pipeline - INFO - Starting backup validation for processed columns...
+2025-05-04 21:32:26,722 - realtime_pipeline - INFO - [92mPost-Processing Validation Complete.[0m
+2025-05-04 21:32:26,723 - realtime_pipeline - INFO - Completed: Backup Validation (Duration: 0:00:00.002028)
+2025-05-04 21:32:26,723 - realtime_pipeline - INFO - Post-Processing Validation Complete.
+2025-05-04 21:32:26,723 - realtime_pipeline - INFO - Starting: Writing Realtime Output
+2025-05-04 21:32:26,723 - realtime_pipeline - INFO - Attempting to write file: output/realtime\F1DriversCleanNew.csv
+2025-05-04 21:32:26,738 - realtime_pipeline - INFO - [92mSuccessfully wrote file with shape (868, 23) to: output/realtime\F1DriversCleanNew.csv[0m
+2025-05-04 21:32:26,739 - realtime_pipeline - INFO - Completed: Writing Realtime Output (Duration: 0:00:00.015440)
+2025-05-04 21:32:26,739 - realtime_pipeline - INFO - [92mSuccessfully Write file: output/realtime\F1DriversCleanNew.csv[0m
+2025-05-04 21:32:39,301 - realtime_pipeline - INFO - Stopping realtime monitoring
+2025-05-04 21:32:39,302 - realtime_pipeline - INFO - Completed: Realtime Monitoring Mode (Duration: 0:00:22.646583)

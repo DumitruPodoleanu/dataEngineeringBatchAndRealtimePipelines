@@ -1,0 +1,152 @@
+[2025-05-04T23:28:45.944+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_processing_pipeline.run_batch_pipeline manual__2025-05-04T23:28:45.017578+00:00 [queued]>
+[2025-05-04T23:28:45.950+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_processing_pipeline.run_batch_pipeline manual__2025-05-04T23:28:45.017578+00:00 [queued]>
+[2025-05-04T23:28:45.951+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2025-05-04T23:28:45.957+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): run_batch_pipeline> on 2025-05-04 23:28:45.017578+00:00
+[2025-05-04T23:28:45.961+0000] {standard_task_runner.py:60} INFO - Started process 71 to run task
+[2025-05-04T23:28:45.963+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'batch_processing_pipeline', 'run_batch_pipeline', 'manual__2025-05-04T23:28:45.017578+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/batch_processing.py', '--cfg-path', '/tmp/tmp9kulmniu']
+[2025-05-04T23:28:45.965+0000] {standard_task_runner.py:88} INFO - Job 41: Subtask run_batch_pipeline
+[2025-05-04T23:28:45.984+0000] {task_command.py:423} INFO - Running <TaskInstance: batch_processing_pipeline.run_batch_pipeline manual__2025-05-04T23:28:45.017578+00:00 [running]> on host 1e3bf9379600
+[2025-05-04T23:28:46.011+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='you' AIRFLOW_CTX_DAG_ID='batch_processing_pipeline' AIRFLOW_CTX_TASK_ID='run_batch_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-05-04T23:28:45.017578+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-04T23:28:45.017578+00:00'
+[2025-05-04T23:28:46.012+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-04T23:28:46.013+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/main.py --mode batch']
+[2025-05-04T23:28:46.017+0000] {subprocess.py:86} INFO - Output:
+[2025-05-04T23:28:46.370+0000] {subprocess.py:93} INFO - Looking for batch files in: /opt/***/input/batch/
+[2025-05-04T23:28:46.370+0000] {subprocess.py:93} INFO - Directory found. Files inside:
+[2025-05-04T23:28:46.370+0000] {subprocess.py:93} INFO - ['Nashville_housing_data_2013_2016.csv']
+[2025-05-04T23:28:46.370+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,369 - INFO - Starting: Batch Processing Mode[0m
+[2025-05-04T23:28:46.370+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,370 - INFO - Processing batch file: /opt/***/input/batch/Nashville_housing_data_2013_2016.csv[0m
+[2025-05-04T23:28:46.370+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,370 - INFO - Starting: Reading Batch File[0m
+[2025-05-04T23:28:46.370+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,370 - INFO - Reading file: /opt/***/input/batch/Nashville_housing_data_2013_2016.csv[0m
+[2025-05-04T23:28:46.526+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,526 - INFO - Successfully read file with shape: (56636, 31)[0m
+[2025-05-04T23:28:46.526+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,526 - INFO - Completed: Reading Batch File (Duration: 0:00:00.155823)[0m
+[2025-05-04T23:28:46.526+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,526 - INFO - Successfully Read file: /opt/***/input/batch/Nashville_housing_data_2013_2016.csv[0m
+[2025-05-04T23:28:46.526+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,526 - INFO - Initial Batch Data shape: (56636, 31)[0m
+[2025-05-04T23:28:46.527+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,526 - INFO - Initial Batch Data columns: ['Unnamed: 0.1', 'Unnamed: 0', 'Parcel ID', 'Land Use', 'Property Address', 'Suite/ Condo   #', 'Property City', 'Sale Date', 'Sale Price', 'Legal Reference', 'Sold As Vacant', 'Multiple Parcels Involved in Sale', 'Owner Name', 'Address', 'City', 'State', 'Acreage', 'Tax District', 'Neighborhood', 'image', 'Land Value', 'Building Value', 'Total Value', 'Finished Area', 'Foundation Type', 'Year Built', 'Exterior Wall', 'Grade', 'Bedrooms', 'Full Bath', 'Half Bath'][0m
+[2025-05-04T23:28:46.572+0000] {subprocess.py:93} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-05-04T23:28:46.572+0000] {subprocess.py:93} INFO - RangeIndex: 56636 entries, 0 to 56635
+[2025-05-04T23:28:46.572+0000] {subprocess.py:93} INFO - Data columns (total 31 columns):
+[2025-05-04T23:28:46.572+0000] {subprocess.py:93} INFO -  #   Column                             Non-Null Count  Dtype
+[2025-05-04T23:28:46.572+0000] {subprocess.py:93} INFO - ---  ------                             --------------  -----
+[2025-05-04T23:28:46.572+0000] {subprocess.py:93} INFO -  0   Unnamed: 0.1                       56636 non-null  int64
+[2025-05-04T23:28:46.572+0000] {subprocess.py:93} INFO -  1   Unnamed: 0                         56636 non-null  int64
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  2   Parcel ID                          56636 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  3   Land Use                           56636 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  4   Property Address                   56477 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  5   Suite/ Condo   #                   6109 non-null   object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  6   Property City                      56477 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  7   Sale Date                          56636 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  8   Sale Price                         56636 non-null  int64
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  9   Legal Reference                    56636 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  10  Sold As Vacant                     56636 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  11  Multiple Parcels Involved in Sale  56636 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  12  Owner Name                         25261 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  13  Address                            26017 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  14  City                               26017 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  15  State                              26017 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  16  Acreage                            26017 non-null  float64
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  17  Tax District                       26017 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  18  Neighborhood                       26017 non-null  float64
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  19  image                              25335 non-null  object
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  20  Land Value                         26017 non-null  float64
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  21  Building Value                     26017 non-null  float64
+[2025-05-04T23:28:46.573+0000] {subprocess.py:93} INFO -  22  Total Value                        26017 non-null  float64
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO -  23  Finished Area                      24166 non-null  float64
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO -  24  Foundation Type                    24164 non-null  object
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO -  25  Year Built                         24165 non-null  float64
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO -  26  Exterior Wall                      24165 non-null  object
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO -  27  Grade                              24165 non-null  object
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO -  28  Bedrooms                           24159 non-null  float64
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO -  29  Full Bath                          24277 non-null  float64
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO -  30  Half Bath                          24146 non-null  float64
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO - dtypes: float64(10), int64(3), object(18)
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO - memory usage: 13.4+ MB
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,572 - INFO - Starting: Batch Validation[0m
+[2025-05-04T23:28:46.574+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:46,572 - INFO - Starting validation for Nashville Housing dataset[0m
+[2025-05-04T23:28:46.575+0000] {subprocess.py:93} INFO - [91m2025-05-04 23:28:46,575 - ERROR - Column validation failed: {'missing_mandatory': ['totalvalue', 'uniqueid', 'landvalue', 'landuse', 'buildingvalue', 'saledate', 'parcelid', 'yearbuilt', 'finishedarea', 'saleprice', 'fullbath', 'legalreference', 'halfbath'], 'missing_optional': ['suite_condo_#', 'unnamed:_0.1', 'unnamed:_0'], 'unexpected': ['suite_condo__', 'unnamed_0.1', 'unnamed_0']}[0m
+[2025-05-04T23:28:46.995+0000] {subprocess.py:93} INFO - [93m2025-05-04 23:28:46,994 - WARNING - Found 32477 missing values in mandatory column 'bedrooms'. These rows will be removed during processing.[0m
+[2025-05-04T23:28:47.384+0000] {subprocess.py:93} INFO - [93m2025-05-04 23:28:47,384 - WARNING - Found 30619 missing values in mandatory column 'acreage'. These rows will be removed during processing.[0m
+[2025-05-04T23:28:47.390+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,390 - INFO - All validation checks passed[0m
+[2025-05-04T23:28:47.390+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,390 - INFO - Nashville Housing dataset passed validation[0m
+[2025-05-04T23:28:47.392+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,392 - INFO - Completed: Batch Validation (Duration: 0:00:00.820240)[0m
+[2025-05-04T23:28:47.392+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,392 - INFO - Batch Validation - PASSED[0m
+[2025-05-04T23:28:47.392+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,392 - INFO - Starting: Batch Processing[0m
+[2025-05-04T23:28:47.392+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,392 - INFO - Starting processing for Nashville Housing dataset[0m
+[2025-05-04T23:28:47.392+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,392 - INFO - Standardizing column names[0m
+[2025-05-04T23:28:47.392+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,392 - INFO - Handling missing values in mandatory columns[0m
+[2025-05-04T23:28:47.395+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,395 - INFO - Removed 32477 rows with missing mandatory values[0m
+[2025-05-04T23:28:47.395+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,395 - INFO -   - Column 'bedrooms': removed 32477 missing values[0m
+[2025-05-04T23:28:47.395+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,395 - INFO -   - Column 'acreage': removed 32477 missing values[0m
+[2025-05-04T23:28:47.395+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,395 - INFO - Removing duplicate rows[0m
+[2025-05-04T23:28:47.416+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,416 - INFO - Removing columns: ['image', 'sold_as_vacant', 'multiple_parcels_involved_in_sale', 'unnamed:_0', 'property_address'][0m
+[2025-05-04T23:28:47.419+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,419 - INFO - Adding derived columns[0m
+[2025-05-04T23:28:47.460+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,460 - INFO - All derived columns added successfully[0m
+[2025-05-04T23:28:47.461+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,461 - INFO - Processing completed. Final shape: (24159, 40)[0m
+[2025-05-04T23:28:47.461+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,461 - INFO - Completed: Batch Processing (Duration: 0:00:00.068602)[0m
+[2025-05-04T23:28:47.461+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,461 - INFO - Processed Batch Data shape: (24159, 40)[0m
+[2025-05-04T23:28:47.461+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,461 - INFO - Processed Batch Data columns: ['unnamed:_0.1', 'parcel_id', 'land_use', 'suite__condo___#', 'property_city', 'sale_date', 'sale_price', 'legal_reference', 'owner_name', 'address', 'city', 'state', 'acreage', 'tax_district', 'neighborhood', 'land_value', 'building_value', 'total_value', 'finished_area', 'foundation_type', 'year_built', 'exterior_wall', 'grade', 'bedrooms', 'full_bath', 'half_bath', 'saleyear', 'salemonth', 'propertyage', 'pricepersqft', 'landtobuildingratio', 'salepricecategory', 'ownerfirstname', 'ownerlastname', 'is_new_construction', 'price_outlier_status', 'neighborhood_price_ratio', 'neighborhood_price_index', 'value_condition_ratio', 'value_condition_proxy'][0m
+[2025-05-04T23:28:47.481+0000] {subprocess.py:93} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-05-04T23:28:47.481+0000] {subprocess.py:93} INFO - Index: 24159 entries, 1 to 56616
+[2025-05-04T23:28:47.481+0000] {subprocess.py:93} INFO - Data columns (total 40 columns):
+[2025-05-04T23:28:47.481+0000] {subprocess.py:93} INFO -  #   Column                    Non-Null Count  Dtype
+[2025-05-04T23:28:47.481+0000] {subprocess.py:93} INFO - ---  ------                    --------------  -----
+[2025-05-04T23:28:47.481+0000] {subprocess.py:93} INFO -  0   unnamed:_0.1              24159 non-null  int64
+[2025-05-04T23:28:47.481+0000] {subprocess.py:93} INFO -  1   parcel_id                 24159 non-null  object
+[2025-05-04T23:28:47.482+0000] {subprocess.py:93} INFO -  2   land_use                  24159 non-null  object
+[2025-05-04T23:28:47.482+0000] {subprocess.py:93} INFO -  3   suite__condo___#          2 non-null      object
+[2025-05-04T23:28:47.482+0000] {subprocess.py:93} INFO -  4   property_city             24157 non-null  object
+[2025-05-04T23:28:47.482+0000] {subprocess.py:93} INFO -  5   sale_date                 24159 non-null  datetime64[ns]
+[2025-05-04T23:28:47.482+0000] {subprocess.py:93} INFO -  6   sale_price                24159 non-null  int64
+[2025-05-04T23:28:47.482+0000] {subprocess.py:93} INFO -  7   legal_reference           24159 non-null  object
+[2025-05-04T23:28:47.482+0000] {subprocess.py:93} INFO -  8   owner_name                24159 non-null  object
+[2025-05-04T23:28:47.482+0000] {subprocess.py:93} INFO -  9   address                   24159 non-null  object
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  10  city                      24159 non-null  object
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  11  state                     24159 non-null  object
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  12  acreage                   24159 non-null  float64
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  13  tax_district              24159 non-null  object
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  14  neighborhood              24159 non-null  float64
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  15  land_value                24159 non-null  float64
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  16  building_value            24147 non-null  float64
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  17  total_value               24159 non-null  float64
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  18  finished_area             24146 non-null  float64
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  19  foundation_type           24146 non-null  object
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  20  year_built                24147 non-null  float64
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  21  exterior_wall             24147 non-null  object
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  22  grade                     24147 non-null  object
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  23  bedrooms                  24159 non-null  float64
+[2025-05-04T23:28:47.483+0000] {subprocess.py:93} INFO -  24  full_bath                 24158 non-null  float64
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  25  half_bath                 24027 non-null  float64
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  26  saleyear                  24159 non-null  int32
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  27  salemonth                 24159 non-null  int32
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  28  propertyage               24147 non-null  float64
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  29  pricepersqft              24159 non-null  float64
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  30  landtobuildingratio       24159 non-null  float64
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  31  salepricecategory         24159 non-null  object
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  32  ownerfirstname            24159 non-null  object
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  33  ownerlastname             24159 non-null  object
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  34  is_new_construction       24159 non-null  bool
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  35  price_outlier_status      24159 non-null  object
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  36  neighborhood_price_ratio  24159 non-null  float64
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  37  neighborhood_price_index  24159 non-null  object
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  38  value_condition_ratio     24147 non-null  float64
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO -  39  value_condition_proxy     24159 non-null  object
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO - dtypes: bool(1), datetime64[ns](1), float64(15), int32(2), int64(2), object(19)
+[2025-05-04T23:28:47.484+0000] {subprocess.py:93} INFO - memory usage: 7.2+ MB
+[2025-05-04T23:28:47.485+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,481 - INFO - Starting: Backup Validation[0m
+[2025-05-04T23:28:47.485+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,481 - INFO - Starting backup validation for processed data[0m
+[2025-05-04T23:28:47.485+0000] {subprocess.py:93} INFO - [93m2025-05-04 23:28:47,481 - WARNING - Column 'propertyage' has 12 null values[0m
+[2025-05-04T23:28:47.488+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,488 - INFO - All derived columns validated successfully[0m
+[2025-05-04T23:28:47.489+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,488 - INFO - Processed data passed backup validation[0m
+[2025-05-04T23:28:47.489+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,488 - INFO - Completed: Backup Validation (Duration: 0:00:00.007858)[0m
+[2025-05-04T23:28:47.489+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,488 - INFO - derived_columns_validation[0m
+[2025-05-04T23:28:47.489+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,488 - INFO - is_valid[0m
+[2025-05-04T23:28:47.489+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,488 - INFO - Starting: Writing Batch Output[0m
+[2025-05-04T23:28:47.489+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,488 - INFO - Attempting to write file: output/batch/Nashville_housing_data_2013_2016.csv[0m
+[2025-05-04T23:28:47.678+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,677 - INFO - Successfully wrote file with shape (24159, 40) to: output/batch/Nashville_housing_data_2013_2016.csv[0m
+[2025-05-04T23:28:47.678+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,678 - INFO - Completed: Writing Batch Output (Duration: 0:00:00.189090)[0m
+[2025-05-04T23:28:47.678+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:47,678 - INFO - Successfully Write file: output/batch/Nashville_housing_data_2013_2016.csv[0m
+[2025-05-04T23:28:51.248+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:51,247 - INFO - Uploaded to Azure Blob Storage: container='batch', blob='Nashville_housing_data_2013_2016.csv'[0m
+[2025-05-04T23:28:51.261+0000] {subprocess.py:93} INFO - [92m2025-05-04 23:28:51,261 - INFO - Completed: Batch Processing Mode (Duration: 0:00:04.891324)[0m
+[2025-05-04T23:28:51.344+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-04T23:28:51.355+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=batch_processing_pipeline, task_id=run_batch_pipeline, execution_date=20250504T232845, start_date=20250504T232845, end_date=20250504T232851
+[2025-05-04T23:28:51.394+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-04T23:28:51.400+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,25 @@
+[2025-05-04T22:48:07.591+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_processing_pipeline.run_batch_pipeline manual__2025-05-04T22:48:06.735200+00:00 [queued]>
+[2025-05-04T22:48:07.594+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_processing_pipeline.run_batch_pipeline manual__2025-05-04T22:48:06.735200+00:00 [queued]>
+[2025-05-04T22:48:07.594+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 2
+[2025-05-04T22:48:07.599+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): run_batch_pipeline> on 2025-05-04 22:48:06.735200+00:00
+[2025-05-04T22:48:07.603+0000] {standard_task_runner.py:60} INFO - Started process 62 to run task
+[2025-05-04T22:48:07.605+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'batch_processing_pipeline', 'run_batch_pipeline', 'manual__2025-05-04T22:48:06.735200+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/batch_processing.py', '--cfg-path', '/tmp/tmpfdsy5xai']
+[2025-05-04T22:48:07.609+0000] {standard_task_runner.py:88} INFO - Job 21: Subtask run_batch_pipeline
+[2025-05-04T22:48:07.627+0000] {task_command.py:423} INFO - Running <TaskInstance: batch_processing_pipeline.run_batch_pipeline manual__2025-05-04T22:48:06.735200+00:00 [running]> on host 005f33274be4
+[2025-05-04T22:48:07.653+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='you' AIRFLOW_CTX_DAG_ID='batch_processing_pipeline' AIRFLOW_CTX_TASK_ID='run_batch_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-05-04T22:48:06.735200+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-04T22:48:06.735200+00:00'
+[2025-05-04T22:48:07.654+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-04T22:48:07.655+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/main.py --mode batch']
+[2025-05-04T22:48:07.659+0000] {subprocess.py:86} INFO - Output:
+[2025-05-04T22:48:07.670+0000] {subprocess.py:93} INFO - python: can't open file '/opt/***/main.py': [Errno 2] No such file or directory
+[2025-05-04T22:48:07.671+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-05-04T22:48:07.675+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-05-04T22:48:07.677+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=batch_processing_pipeline, task_id=run_batch_pipeline, execution_date=20250504T224806, start_date=20250504T224807, end_date=20250504T224807
+[2025-05-04T22:48:07.681+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 21 for task run_batch_pipeline (Bash command failed. The command returned a non-zero exit code 2.; 62)
+[2025-05-04T22:48:07.705+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-04T22:48:07.713+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

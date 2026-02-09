@@ -1,0 +1,3 @@
+2025-05-04 21:25:39,156 - realtime_pipeline - INFO - Starting: Realtime Monitoring Mode
+2025-05-04 21:25:39,157 - realtime_pipeline - INFO - Watching for new files...
+2025-05-04 21:25:54,159 - realtime_pipeline - ERROR - [91mException in Realtime Monitoring Mode: 'DataPipelineManager' object has no attribute 'process_realtime_file'[0m

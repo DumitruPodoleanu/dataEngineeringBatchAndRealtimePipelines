@@ -1,0 +1,4 @@
+2025-05-04 19:50:48,997 - realtime_pipeline - INFO - Starting: Realtime Monitoring Mode
+2025-05-04 19:50:48,997 - realtime_pipeline - INFO - Watching for new files...
+2025-05-04 19:58:14,581 - realtime_pipeline - INFO - Stopping realtime monitoring
+2025-05-04 19:58:14,581 - realtime_pipeline - INFO - Completed: Realtime Monitoring Mode (Duration: 0:07:25.583747)

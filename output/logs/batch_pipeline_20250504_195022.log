@@ -1,0 +1,3 @@
+2025-05-04 19:50:22,281 - batch_pipeline - INFO - Starting: Batch Processing Mode
+2025-05-04 19:50:22,282 - batch_pipeline - INFO - No batch files found to process
+2025-05-04 19:50:22,282 - batch_pipeline - INFO - Completed: Batch Processing Mode (Duration: 0:00:00)

@@ -1,0 +1,13 @@
+VALIDATION ERRORS
+==================================================
+
+Total Errors: 1
+Affected Rows: 1
+
+Error Type: Unrealistic Bedrooms (> 20)
+Count: 1
+Details:
+  - Row 7: Bedrooms = 37.0
+
+------------------------------
+

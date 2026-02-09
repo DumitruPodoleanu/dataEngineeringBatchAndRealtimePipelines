@@ -1,0 +1,69 @@
+2025-05-04 23:55:25,134 - batch_pipeline - INFO - Processing batch file: input/batch/Nashville_housing_data_2013_2016.csv
+2025-05-04 23:55:25,135 - batch_pipeline - INFO - Starting: Reading Batch File
+2025-05-04 23:55:25,135 - batch_pipeline - INFO - Reading file: input/batch/Nashville_housing_data_2013_2016.csv
+2025-05-04 23:55:25,407 - batch_pipeline - INFO - Successfully read file with shape: (56636, 31)
+2025-05-04 23:55:25,407 - batch_pipeline - INFO - Completed: Reading Batch File (Duration: 0:00:00.271866)
+2025-05-04 23:55:25,407 - batch_pipeline - INFO - Successfully Read file: input/batch/Nashville_housing_data_2013_2016.csv
+2025-05-04 23:55:25,408 - batch_pipeline - INFO - Initial Batch Data shape: (56636, 31)
+2025-05-04 23:55:25,408 - batch_pipeline - INFO - Initial Batch Data columns: ['Unnamed: 0.1', 'Unnamed: 0', 'Parcel ID', 'Land Use', 'Property Address', 'Suite/ Condo   #', 'Property City', 'Sale Date', 'Sale Price', 'Legal Reference', 'Sold As Vacant', 'Multiple Parcels Involved in Sale', 'Owner Name', 'Address', 'City', 'State', 'Acreage', 'Tax District', 'Neighborhood', 'image', 'Land Value', 'Building Value', 'Total Value', 'Finished Area', 'Foundation Type', 'Year Built', 'Exterior Wall', 'Grade', 'Bedrooms', 'Full Bath', 'Half Bath']
+2025-05-04 23:55:25,490 - batch_pipeline - DEBUG - Initial Batch Data info:
+None
+2025-05-04 23:55:25,512 - batch_pipeline - DEBUG - Initial Batch Data head:
+   Unnamed: 0.1  Unnamed: 0         Parcel ID           Land Use   Property Address Suite/ Condo   #  ... Year Built Exterior Wall  Grade Bedrooms Full Bath Half Bath
+0             0           0  105 03 0D 008.00  RESIDENTIAL CONDO    1208  3RD AVE S                8  ...        NaN           NaN    NaN      NaN       NaN       NaN
+1             1           1   105 11 0 080.00      SINGLE FAMILY   1802  STEWART PL              NaN  ...     1941.0         BRICK   C         2.0       1.0       0.0
+2             2           2   118 03 0 130.00      SINGLE FAMILY  2761  ROSEDALE PL              NaN  ...     2000.0   BRICK/FRAME   C         3.0       2.0       1.0
+3             3           3   119 01 0 479.00      SINGLE FAMILY  224  PEACHTREE ST              NaN  ...     1948.0   BRICK/FRAME   B         4.0       2.0       0.0
+4             4           4   119 05 0 186.00      SINGLE FAMILY      316  LUTIE ST              NaN  ...     1910.0         FRAME   C         2.0       1.0       0.0
+
+[5 rows x 31 columns]
+2025-05-04 23:55:25,512 - batch_pipeline - INFO - Starting: Batch Validation
+2025-05-04 23:55:25,512 - batch_pipeline - INFO - Starting validation for Nashville Housing dataset
+2025-05-04 23:55:25,522 - batch_pipeline - ERROR - Column validation failed: {'missing_mandatory': ['halfbath', 'legalreference', 'yearbuilt', 'saledate', 'uniqueid', 'saleprice', 'fullbath', 'totalvalue', 'parcelid', 'buildingvalue', 'landvalue', 'finishedarea', 'landuse'], 'missing_optional': ['unnamed:_0.1', 'unnamed:_0', 'suite_condo_#'], 'unexpected': ['unnamed_0.1', 'unnamed_0', 'suite_condo__']}
+2025-05-04 23:55:26,130 - batch_pipeline - WARNING - Found 32477 missing values in mandatory column 'bedrooms'. These rows will be removed during processing.
+2025-05-04 23:55:26,717 - batch_pipeline - WARNING - Found 30619 missing values in mandatory column 'acreage'. These rows will be removed during processing.
+2025-05-04 23:55:26,730 - batch_pipeline - INFO - All validation checks passed
+2025-05-04 23:55:26,731 - batch_pipeline - INFO - Nashville Housing dataset passed validation
+2025-05-04 23:55:26,736 - batch_pipeline - INFO - Completed: Batch Validation (Duration: 0:00:01.223517)
+2025-05-04 23:55:26,736 - batch_pipeline - INFO - Batch Validation - PASSED
+2025-05-04 23:55:26,736 - batch_pipeline - DEBUG - Batch Validation results: {'column_validation': {'missing_mandatory': ['halfbath', 'legalreference', 'yearbuilt', 'saledate', 'uniqueid', 'saleprice', 'fullbath', 'totalvalue', 'parcelid', 'buildingvalue', 'landvalue', 'finishedarea', 'landuse'], 'missing_optional': ['unnamed:_0.1', 'unnamed:_0', 'suite_condo_#'], 'unexpected': ['unnamed_0.1', 'unnamed_0', 'suite_condo__']}, 'integrity_errors': [], 'validation_summary': {'total_errors': 0, 'error_types': {}, 'affected_rows': set(), 'error_details': []}, 'is_valid': True}
+2025-05-04 23:55:26,736 - batch_pipeline - INFO - Starting: Batch Processing
+2025-05-04 23:55:26,737 - batch_pipeline - INFO - Starting processing for Nashville Housing dataset
+2025-05-04 23:55:26,737 - batch_pipeline - INFO - Standardizing column names
+2025-05-04 23:55:26,737 - batch_pipeline - INFO - Handling missing values in mandatory columns
+2025-05-04 23:55:26,746 - batch_pipeline - INFO - Removed 32477 rows with missing mandatory values
+2025-05-04 23:55:26,746 - batch_pipeline - INFO -   - Column 'bedrooms': removed 32477 missing values
+2025-05-04 23:55:26,747 - batch_pipeline - INFO -   - Column 'acreage': removed 32477 missing values
+2025-05-04 23:55:26,747 - batch_pipeline - INFO - Removing duplicate rows
+2025-05-04 23:55:26,798 - batch_pipeline - INFO - Removing columns: ['image', 'sold_as_vacant', 'multiple_parcels_involved_in_sale', 'unnamed:_0', 'property_address']
+2025-05-04 23:55:26,806 - batch_pipeline - INFO - Adding derived columns
+2025-05-04 23:55:26,886 - batch_pipeline - INFO - All derived columns added successfully
+2025-05-04 23:55:26,887 - batch_pipeline - INFO - Processing completed. Final shape: (24159, 40)
+2025-05-04 23:55:26,887 - batch_pipeline - INFO - Completed: Batch Processing (Duration: 0:00:00.150465)
+2025-05-04 23:55:26,888 - batch_pipeline - INFO - Processed Batch Data shape: (24159, 40)
+2025-05-04 23:55:26,888 - batch_pipeline - INFO - Processed Batch Data columns: ['unnamed:_0.1', 'parcel_id', 'land_use', 'suite__condo___#', 'property_city', 'sale_date', 'sale_price', 'legal_reference', 'owner_name', 'address', 'city', 'state', 'acreage', 'tax_district', 'neighborhood', 'land_value', 'building_value', 'total_value', 'finished_area', 'foundation_type', 'year_built', 'exterior_wall', 'grade', 'bedrooms', 'full_bath', 'half_bath', 'saleyear', 'salemonth', 'propertyage', 'pricepersqft', 'landtobuildingratio', 'salepricecategory', 'ownerfirstname', 'ownerlastname', 'is_new_construction', 'price_outlier_status', 'neighborhood_price_ratio', 'neighborhood_price_index', 'value_condition_ratio', 'value_condition_proxy']
+2025-05-04 23:55:26,925 - batch_pipeline - DEBUG - Processed Batch Data info:
+None
+2025-05-04 23:55:26,944 - batch_pipeline - DEBUG - Processed Batch Data head:
+   unnamed:_0.1        parcel_id       land_use suite__condo___#  ... neighborhood_price_ratio     neighborhood_price_index  value_condition_ratio           value_condition_proxy
+1             1  105 11 0 080.00  SINGLE FAMILY              NaN  ...                 1.164976                Above Average               1.027943        Average for Age/Location
+2             2  118 03 0 130.00  SINGLE FAMILY              NaN  ...                 0.752832                Below Average               0.890487        Average for Age/Location
+3             3  119 01 0 479.00  SINGLE FAMILY              NaN  ...                 0.104248  Significantly Below Average               0.091986  Below Average for Age/Location
+4             4  119 05 0 186.00  SINGLE FAMILY              NaN  ...                 0.362095  Significantly Below Average               0.300559  Below Average for Age/Location
+5             5  119 05 0 387.00  SINGLE FAMILY              NaN  ...                 0.631824                Below Average               0.557504  Below Average for Age/Location
+
+[5 rows x 40 columns]
+2025-05-04 23:55:26,944 - batch_pipeline - INFO - Starting: Backup Validation
+2025-05-04 23:55:26,944 - batch_pipeline - INFO - Starting backup validation for processed data
+2025-05-04 23:55:26,945 - batch_pipeline - WARNING - Column 'propertyage' has 12 null values
+2025-05-04 23:55:26,956 - batch_pipeline - INFO - All derived columns validated successfully
+2025-05-04 23:55:26,956 - batch_pipeline - INFO - Processed data passed backup validation
+2025-05-04 23:55:26,956 - batch_pipeline - INFO - Completed: Backup Validation (Duration: 0:00:00.012049)
+2025-05-04 23:55:26,956 - batch_pipeline - INFO - derived_columns_validation
+2025-05-04 23:55:26,957 - batch_pipeline - INFO - is_valid
+2025-05-04 23:55:26,957 - batch_pipeline - INFO - Starting: Writing Batch Output
+2025-05-04 23:55:26,957 - batch_pipeline - INFO - Attempting to write file: output/batch\Nashville_housing_data_2013_2016.csv
+2025-05-04 23:55:27,378 - batch_pipeline - INFO - Successfully wrote file with shape (24159, 40) to: output/batch\Nashville_housing_data_2013_2016.csv
+2025-05-04 23:55:27,378 - batch_pipeline - INFO - Completed: Writing Batch Output (Duration: 0:00:00.420836)
+2025-05-04 23:55:27,378 - batch_pipeline - INFO - Successfully Write file: output/batch\Nashville_housing_data_2013_2016.csv
+2025-05-04 23:55:31,662 - batch_pipeline - INFO - Uploaded to Azure Blob Storage: container='batch', blob='Nashville_housing_data_2013_2016.csv'
